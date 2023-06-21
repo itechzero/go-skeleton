@@ -1,14 +1,13 @@
-
-FROM golang:1.19.2-alpine3.16 as builder
+FROM golang:1.20-alpine3.18 as builder
 
 WORKDIR /go/src/workspace
 ADD . /go/src/workspace
 
 RUN apk add --no-cache alpine-sdk && make all
 
-FROM alpine:3.16
+FROM alpine:3.18
 
-RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
+RUN apk update && apk add --no-cache ca-certificates
 
 WORKDIR /go/bin
 

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: go-first-container
-          image: docker.io/xvscode/go-first:latest
+          image: docker.io/itechzero/go-first:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
